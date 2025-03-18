@@ -105,6 +105,9 @@ namespace GitStatus
                     if (process.ExitCode != 0 && !string.IsNullOrEmpty(error))
                     {
                         Debug.LogWarning($"Git 명령어 오류: {error}");
+
+// 브랜치 확장 테스트
+
                     }
 
                     return output;
