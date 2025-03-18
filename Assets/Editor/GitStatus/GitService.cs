@@ -105,6 +105,9 @@ namespace GitStatus
                     if (process.ExitCode != 0 && !string.IsNullOrEmpty(error))
                     {
                         Debug.LogWarning($"Git 명령어 오류: {error}");
+
+                        // Github Desktop에서 Branch 생성 및 변경을 시도하면, Origin Git에서 반영이 늦게되면서 경고 문구가 발생함.
+                        // 왤까
                     }
 
                     return output;
