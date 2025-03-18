@@ -107,7 +107,10 @@ namespace GitStatus
                         Debug.LogWarning($"Git 명령어 오류: {error}");
 
                         // Github Desktop에서 Branch 생성 및 변경을 시도하면, Origin Git에서 반영이 늦게되면서 경고 문구가 발생함.
-                        // 왤까
+                        // 이유 : GitHub Desktop에서 Branch를 생성하고, 어떠한 변경점도 Push 되지 않았다면, Origin Git에서는 해당 Branch가 존재하지 않는 것으로 판단함. 
+                        // 해결 : 변경점을 Push 한 후에 Branch를 생성하면 해결됨.
+                        // 참고 : https://github.com/desktop/desktop/issues/13440
+                        
                     }
 
                     return output;
